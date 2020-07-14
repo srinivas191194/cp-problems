@@ -5,6 +5,6 @@
 # if the two circles intersect and False otherwise.
 import math
 def fun_circlesintersect(x1, y1, r1, x2, y2, r2):
-	distance = math.floor(math.sqrt(pow(x2-x1),2) + pow(y2-y1),2)
+	distance = math.floor(math.sqrt(pow((x2-x1),2)+pow((y2-y1),2)))
 	return (r2-r1<=distance<=r1+r2)
 	return False 
