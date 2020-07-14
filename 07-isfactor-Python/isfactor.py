@@ -8,6 +8,8 @@
 def fun_isfactor(f, n):
 	if(f==0 and n==0): 
 		return True
+	elif(f==0 and n >0):
+		return False
 	elif(n ==0):
 		return True
 	elif(n % f == 0):
