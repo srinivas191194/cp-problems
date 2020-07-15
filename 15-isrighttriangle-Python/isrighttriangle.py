@@ -13,6 +13,7 @@ def isrighttriangle(x1, y1, x2, y2, x3, y3):
 	   distance1 = math.pow(distance1,2)
 	   distance2 = math.pow(distance2,2)
 	   distance3 = math.pow(distance3,2)
-	   if(distance1 == distance2+distance3 or distance2 == distance1+distance3 or distance3 == distance1+distance2):
-		   return True
+	   if(distance1+distance2>distance3 or distance2+distance3>distance1 or distance1+distance3>distance2):
+	    if(distance1 == distance2+distance3 or distance2 == distance1+distance3 or distance3 == distance1+distance2):
+		     return True
 	   return False	   
