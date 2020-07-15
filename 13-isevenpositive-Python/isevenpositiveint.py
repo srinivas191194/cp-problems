@@ -6,7 +6,8 @@
 
 def isevenpositiveint(x):
 	# your code goes here
-	if(x.isnumeric() and x >= 0 and x%2 == 0):
+	string = x
+	if((string.isnumeric()) and (x >= 0) and (x%2 == 0)):
 		return True
 	else:
 	    return False
