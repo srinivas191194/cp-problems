@@ -6,10 +6,13 @@
 
 def isevenpositiveint(x):
 	# your code goes here
+	try:
+		int(x)
+	except:
+		return False
 	if( x >= 0 and x%2 == 0):
 		return True
-	else:
-	    return False
+	return False
 	
 	
 	
