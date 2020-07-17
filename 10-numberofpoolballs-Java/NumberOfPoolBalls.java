@@ -6,10 +6,10 @@
 // balls in that number  of full rows. For example, numberOfPoolBalls(3) returns 6. We will not 
 // limit our analysis to a "rack" of 15 balls. Rather, our pool table can contain an unlimited 
 // number of rows. For this problem and the next, you should research Triangular Numbers.
-
+import java.util.*;
 public class NumberOfPoolBalls {
 	public long numberOfPoolBalls(int n) {
 		// Your code goes here
-		return 0;
+		return (n)*(n+1)/2;
 	}
 }
