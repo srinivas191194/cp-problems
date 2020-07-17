@@ -9,7 +9,7 @@ class get_kth_digit {
 	public int fun_get_kth_digit(int digit, int k){
 		// your code goes here
 		int count = -1;
-		while(digit>0){
+		while(digit > 0 || digit < 0){
 			int temp = digit%10;
 			count++;
 			if(count == k)
