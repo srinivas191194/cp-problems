@@ -28,7 +28,7 @@ public class TestJUnit {
    public void testCase2() {
       get_kth_digit s = new get_kth_digit();
       assertEquals("1.", 0, s.fun_get_kth_digit(789,3));
-      assertEquals("2.", 9, s.fun_get_kth_digit(-789, 0));
+      assertEquals("2.", -9, s.fun_get_kth_digit(-789, 0));
       assertEquals("3.", 0, s.fun_get_kth_digit(-789, 4));
    }
 }
