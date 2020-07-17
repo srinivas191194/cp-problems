@@ -36,10 +36,23 @@ class LinkedList{
 
 	public void insert_first(Element new_element){
 		 // "Insert new element as the head of the LinkedList"
+		 new_element.next = head;
+		 head = new_element;
 	}
 
 	public Element delete_first(){
-		return this.head;
+		if(head == null)
+		   return null;
+		if(head.next == null){
+			Element temp = head;
+			head = null;
+			return temp;
+		}
+		else{
+			Element temp = head;
+			head = head.next;
+			return temp;
+		}
 	   // "Delete the first (head) element in the LinkedList as return it"
 	}
 }
@@ -53,9 +66,12 @@ public class stacks{
 
 	public void push(Element e){
 		 // "Push (add) a new element onto the top of the stack"
+		 ll.insert_first(e);
+
 	}
 
 	public Element pop(){
-		return new Element(5);
+		Element res = ll.delete_first();
+		return res;
 	}
 }
