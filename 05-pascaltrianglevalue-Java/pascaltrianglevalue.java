@@ -6,8 +6,16 @@
 // # are not legal values, return None, instead of crashing. 
 
 class pascaltrianglevalue {
+	public int fact(int x){
+		if(x == 0)
+		 return 1;
+		return x*fact(x-1);
+	}
 	public int fun_pascaltrianglevalue(int row, int col){
 		// your code goes here
-		return 1;	
+		if(row >0 && col < row+1)
+		   return (fact(row))/(fact(col)*fact(row-col));	
+		else
+		   return 0;
 	}
 }
