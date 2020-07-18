@@ -37,10 +37,35 @@
 // assert(bonusPlayThreeDiceYahtzee(2633413) == (633, 16))
 // assert(bonusPlayThreeDiceYahtzee(2333413) == (333, 29))
 // assert(bonusPlayThreeDiceYahtzee(2333555) == (555, 35))
-
+import java.util.*;
 public class BonusPlayThreeDiceYahtzee {
 	public int[] bonusPlayThreeDiceYahtzee(int dice) {
 		// Your code goes here
-		return new int[0];
+		ArrayList<Integer> object = new ArrayList<Integer>();
+		int[] result = new int[2];
+		int a = dice%10;
+		dice = dice/10;
+		int b = dice%10;
+		dice = dice/10;
+		int c = dice%10;
+		dice = dice/10;
+		if(a==b && b==c && c==a){
+			object.add(a);
+			object.add(b);
+			object.add(c);
+			int s = object.size();
+			result[0] = object.get(s-1)*100 + object.get(s-2)*10+object.get(s-s);
+			result[1] = 20+a+b+c;
+			return result;
+		}
+		object.add(a);
+		object.add(b);
+		object.add(c);
+		Collections.sort(object);
+		int s = object.size();
+		int temp = object.get(s-1)+object.get(s-2)+object.get(s-s);
+		
+		   
+		return 
 	}
 }
