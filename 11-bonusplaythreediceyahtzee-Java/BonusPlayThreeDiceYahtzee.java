@@ -39,6 +39,67 @@
 // assert(bonusPlayThreeDiceYahtzee(2333555) == (555, 35))
 import java.util.*;
 public class BonusPlayThreeDiceYahtzee {
+	public int[] playStep2(int hand, int dice) {  
+		// Your code goes here
+		ArrayList<Integer> object = new ArrayList<Integer>(); 
+		int[] results = new int[2];
+		int a = hand % 10;  //4
+		hand = hand/10;
+		int b = hand % 10;
+		hand = hand /10;
+		int c = hand % 10;
+		hand = hand/10;
+		int element;
+		int element2;
+		int count = 0;
+		if(a!=b && b!=c && c!=a){
+		 element = Math.max(a,b);
+		 element2 = Math.max(c,element);
+		 object.add(element2);
+		 count = 2;
+		 while(count!=0){
+		   int val = dice%10;
+		   object.add(val);
+		   dice = dice /10;
+		   count--;
+		 }
+		 Collections.sort(object);
+		 int s = object.size();
+		 results[0] =  object.get(s-1)*100+object.get(s-2)*10+object.get(s-s);
+		 results[1] = dice;
+		 return results;
+		}
+		else if(a==b){
+		  element2 = a;
+		  object.add(element2);
+		  element = b;
+		  object.add(element);
+		}
+		else if(a==c){
+			element2 = a;
+			object.add(element2);
+			element = c;
+			object.add(element);
+		}
+		else if(b == c){
+			element2 = b;
+			object.add(element2);
+			element = c;
+			object.add(element);
+		}
+		count = 1;
+		while(count != 0){
+			int val = dice%10;
+			object.add(val);
+			count--;
+			dice = dice/10;
+		}
+		Collections.sort(object);
+		 int s = object.size();
+		 results[0] =  object.get(s-1)*100+object.get(s-2)*10+object.get(s-s);
+		 results[1] = dice;
+		 return results;
+	}
 	public int[] bonusPlayThreeDiceYahtzee(int dice) {
 		// Your code goes here
 		ArrayList<Integer> object = new ArrayList<Integer>();
@@ -62,10 +123,72 @@ public class BonusPlayThreeDiceYahtzee {
 		object.add(b);
 		object.add(c);
 		Collections.sort(object);
-		int s = object.size();
-		int temp = object.get(s-1)+object.get(s-2)+object.get(s-s);
-		
-		   
-		return 
+		int s1 = object.size();
+		int temp = object.get(s1-1)*100+object.get(s1-2)*10+object.get(s1-s1);
+		object.remove(s1-1);
+		object.remove(s1-2);
+		object.remove(s1-s1);
+		int[] arr =playStep2(temp,dice);
+		temp = arr[0];
+		a = temp%10;
+		temp = temp/10;
+		b = temp%10;
+		temp = temp/10;
+		c = temp%10;
+		temp = temp/10;
+		if(a==b && b==c && c==a){
+			object.add(a);
+			object.add(b);
+			object.add(c);
+			int s2 = object.size();
+			result[0] = object.get(s2-1)*100 + object.get(s2-2)*10+object.get(s2-s2);
+			result[1] = 20+a+b+c;
+			return result;
+		}
+		object.add(a);
+		object.add(b);
+		object.add(c);
+		Collections.sort(object);
+		int s2 = object.size();
+		 temp = object.get(s2-1)*100+object.get(s2-2)*10+object.get(s2-s2);
+		object.remove(s2-1);
+		object.remove(s2-2);
+		object.remove(s2-s2);
+		int[] arr2 = playStep2(arr[0],arr[1]);
+		temp = arr2[0];
+		a = temp%10;
+		temp = temp/10;
+		b = temp%10;
+		temp = temp/10;
+		c = temp%10;
+		temp = temp/10;
+		if(a==b && b==c && c==a){
+			object.add(a);
+			object.add(b);
+			object.add(c);
+			 s2 = object.size();
+			result[0] = object.get(s2-1)*100 + object.get(s2-2)*10+object.get(s2-s2);
+			result[1] = 20+a+b+c;
+			return result;
+		}
+		if(a==b || b==c ||c==a){
+			result[0] = arr2[0];
+			if(a==b){
+				result[1] = 10+a+b;
+				return result;
+			}
+			else if(b==c){
+				result[1] = 10+b+c;
+				return result;
+			}
+			else{
+				result[1] = 10+c+a;
+				return result;
+			}	
+		}
+		result[0] = arr2[0];
+		result[1] = c;
+		return result;
+
 	}
 }
