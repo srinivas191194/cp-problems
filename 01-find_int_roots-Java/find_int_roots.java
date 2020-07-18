@@ -7,13 +7,15 @@
 // # return root1, root2
 
 import java.util.*;
+import java.lang.Math;
 class find_int_roots {
 	public int[] fun_find_int_roots(int a, int b, int c){
 		// your code goes here
 		int[] sai = new int[2];
-		int des =(int) Math.sqrt((b*b)-(4*a*c));
-		int x = (int)(-1*b + des)/(2*a);
-		int y = (int)(-1*b-des)/(2*a);
+		int x = (int)(-1*b + Math.sqrt((b*b)-(4*a*c)))/(2*a);
+		System.out.println(x);
+		int y = (int)(-1*b - Math.sqrt((b*b)-(4*a*c)))/(2*a);
+		System.out.println(y);
 		if(x > y){
 			sai[0] = x;
 			sai[1] = y;
