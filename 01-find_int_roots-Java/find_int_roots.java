@@ -11,9 +11,9 @@ class find_int_roots {
 	public int[] fun_find_int_roots(int a, int b, int c){
 		// your code goes here
 		int[] sai = new int[2];
-		int des =(int) Math.sqrt(b*b)-(4*a*c);
-		int x = (-b + des)/2*a;
-		int y = (-b-des)/2*a;
+		int des =(int) Math.sqrt((b*b)-(4*a*c));
+		int x = (int)(-b + des)/2*a;
+		int y = (int)(-b-des)/2*a;
 		if(x > y){
 			sai[0] = x;
 			sai[1] = y;
