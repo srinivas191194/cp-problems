@@ -17,12 +17,12 @@ class find_int_roots {
 		int y = (int)(-1*b - Math.sqrt((b*b)-(4*a*c)))/(2*a);
 		System.out.println(y);
 		if(x > y){
-			sai[0] = x;
-			sai[1] = y;
-		}
-		else{
 			sai[0] = y;
 			sai[1] = x;
+		}
+		else{
+			sai[0] = x;
+			sai[1] = y;
 		}
 		return sai;
 	}
