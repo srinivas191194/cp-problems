@@ -27,10 +27,67 @@
 // Hint: Then, you may wish to use diceToOrderedHand(a, b, c) at the end to convert the 3 dice back
 // into a sorted hand.
 // Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
-
+import java.util.*;
 public class PlayStep2 {
-	public int[] playStep2(int hand, int dice) {
+	public int[] playStep2(int hand, int dice) {  
 		// Your code goes here
-		return new int[0];		
+		ArrayList<Integer> object = new ArrayList<Integer>(); 
+		int[] results = new int[2];
+		int a = hand % 10;  //4
+		hand = hand/10;
+		int b = hand % 10;
+		hand = hand /10;
+		int c = hand % 10;
+		hand = hand/10;
+		int element;
+		int element2;
+		int count = 0;
+		if(a!=b && b!=c && c!=a){
+		 element = Math.max(a,b);
+		 element2 = Math.max(c,element);
+		 object.add(element2);
+		 count = 2;
+		 while(count!=0){
+		   int val = dice%10;
+		   object.add(val);
+		   dice = dice /10;
+		   count--;
+		 }
+		 Collections.sort(object);
+		 int s = object.size();
+		 results[0] =  object.get(s-1)*100+object.get(s-2)*10+object.get(s-s);
+		 results[1] = dice;
+		 return results;
+		}
+		else if(a==b){
+		  element2 = a;
+		  object.add(element2);
+		  element = b;
+		  object.add(element);
+		}
+		else if(a==c){
+			element2 = a;
+			object.add(element2);
+			element = c;
+			object.add(element);
+		}
+		else if(b == c){
+			element2 = b;
+			object.add(element2);
+			element = c;
+			object.add(element);
+		}
+		count = 1;
+		while(count != 0){
+			int val = dice%10;
+			object.add(val);
+			count--;
+			dice = dice/10;
+		}
+		Collections.sort(object);
+		 int s = object.size();
+		 results[0] =  object.get(s-1)*100+object.get(s-2)*10+object.get(s-s);
+		 results[1] = dice;
+		 return results;
 	}
 }
