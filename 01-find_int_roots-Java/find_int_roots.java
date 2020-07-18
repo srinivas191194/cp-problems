@@ -12,12 +12,16 @@ class find_int_roots {
 		// your code goes here
 		int[] sai = new int[2];
 		int des =(int) Math.sqrt((b*b)-(4*a*c));
-		int x = (int)(-b + des)/2*a;
-		int y = (int)(-b-des)/2*a;
+		int x = (int)(-1*b + des)/(2*a);
+		int y = (int)(-1*b-des)/(2*a);
 		if(x > y){
 			sai[0] = x;
 			sai[1] = y;
-		}	
+		}
+		else{
+			sai[0] = y;
+			sai[1] = x;
+		}
 		return sai;
 	}
 }
