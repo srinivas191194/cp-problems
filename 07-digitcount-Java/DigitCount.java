@@ -7,13 +7,18 @@
 import java.util.*;
 import java.lang.Math;
 public class DigitCount {
-	public int digitCount(int n) {
-		// Your code goes here
-		int result =(int) Math.log10(n)+1;
-		System.out.println(result);
-		if(n < 0)
-		  return -1*result;
-		else
-		  return result;
-	}
+    public int digitCount(int n) {
+        // Your code goes here
+        if(n < 0){
+         String s = Integer.toString(n);
+         int leng = s.length()-1;
+         return -1*leng;
+        }
+        else{
+        int result =(int)Math.ceil(Math.log10(n));
+        System.out.println(result);
+        return result;
+        }
+    }
+    
 }
