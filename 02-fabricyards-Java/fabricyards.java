@@ -17,12 +17,14 @@ import java.util.*;
 class fabricyards {
 	public int fun_fabricyards(int inches){
 		// your code goes here
+		if(inches == 0)
+		  return 0;
 		if(inches < 36)
 		  return 1;
 		else if(inches % 36 !=0)
 			return inches/36 +1;
 		else	
-		   return inches /36;
+		   return inches/36;
 	}
 
 	public int fun_fabricexcess(int inches){
@@ -30,6 +32,7 @@ class fabricyards {
 		if(inches == 0)
 		 return 0;
 		int x = fun_fabricexcess(inches);
+		// System.out.println(x);
 		return (36*x -inches);
 	}
 }
