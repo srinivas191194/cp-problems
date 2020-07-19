@@ -10,6 +10,9 @@
 import java.lang.Math.*;
 class rectangle_overlap {
 	public boolean fun_rectangle_overlap(int left1, int top1, int width1, int height1, int left2, int top2, int width2, int height2){
-		return true;
+		if(width1 == left2 && height1 <= top2){
+			return true;
+		}
+		return false;
 	}
 }
