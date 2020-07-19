@@ -11,6 +11,9 @@ public class DigitCount {
 		// Your code goes here
 		int result =(int) Math.log10(n)+1;
 		System.out.println(result);
-		return result;
+		if(n < 0)
+		  return -1*result;
+		else
+		  return result;
 	}
 }
