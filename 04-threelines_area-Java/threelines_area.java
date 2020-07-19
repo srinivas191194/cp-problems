@@ -5,7 +5,7 @@ import java.lang.Math.*;
 import java.util.*;
 class threelines_area {
 	public int fun_threelines_area(int a, int b, int c){
-		double s = (a+b+c)/2;
+		int s = (a+b+c)/2;
 		return (int) Math.sqrt(s*(s-a)*(s-b)*(s-c));
 	}
 }
