@@ -19,7 +19,7 @@ public class TestJUnit {
 		assertEquals(new DigitCount().digitCount(-24), -2);
       assertEquals(new DigitCount().digitCount(0), 1);
       assertEquals(new DigitCount().digitCount(26), 2);
-      assertEquals(new DigitCount().digitCount(-52311231), 8);
+      assertEquals(new DigitCount().digitCount(-52311231), -8);
    }
 
    @Test
