@@ -4,10 +4,13 @@
 //could do this would be to return len(str(abs(n))), but you cannot do that, since you may not use strings 
 //here! This can be solved with logarithms, but seeing as this is "loops week", you should instead simply 
 //repeatedly remove the ones digit until you cannot.
-
+import java.util.*;
+import java.lang.Math;
 public class DigitCount {
 	public int digitCount(int n) {
 		// Your code goes here
-		return 52311231;
+		int result =(int) Math.log10(n)+1;
+		System.out.println(result);
+		return result;
 	}
 }
