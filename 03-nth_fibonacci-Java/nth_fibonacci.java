@@ -7,8 +7,22 @@
 
 
 class nth_fibonacci {
+	int first =0 ;
+	int second = 1;
+	int temp = 1;
 	public int fun_nthfibonaccinumber(int n){
 		// your code goes here
-		return 0;
+		if(n == 0 || n==1){
+		  int temp1 = first;
+		  int temp2 = second;
+		  first = 0;
+		  second = 1;
+		  temp = 1;
+		  return temp1+temp2;
+		}
+		first = second;
+		second = temp;
+		temp = first+second;
+		return fun_nthfibonaccinumber(n-1);
 	}
 }
