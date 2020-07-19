@@ -9,16 +9,17 @@ import java.lang.Math;
 public class DigitCount {
     public int digitCount(int n) {
         // Your code goes here
-        if(n < 0){
+        if(n<0){
          String s = Integer.toString(n);
          int leng = s.length()-1;
          return -1*leng;
         }
+        if(n == 0)
+         return 1;
         else{
-        int result =(int)Math.ceil(Math.log10(n));
+        int result =(int)Math.log10(n)+1;
         System.out.println(result);
         return result;
         }
     }
-    
 }
