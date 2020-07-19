@@ -32,7 +32,7 @@ class fabricyards {
 		// your code goes here
 		if(inches == 0)
 		 return 0;
-		int x = fun_fabricexcess(inches);
+		int x = fun_fabricyards(inches);
 		// System.out.println(x);
 		int y = 36*x - inches;
 		return y;
