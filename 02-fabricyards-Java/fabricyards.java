@@ -14,6 +14,7 @@ import javax.lang.model.util.ElementScanner14;
 // # . Hint: you may want to use fabricYards, which you just wrote!
 
 import java.util.*;
+import java.lang.Math;
 class fabricyards {
 	public int fun_fabricyards(int inches){
 		// your code goes here
