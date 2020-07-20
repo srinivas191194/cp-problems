@@ -16,6 +16,9 @@
 public class FixMostlyMagicSquare {
 	public int[][] fixMostlyMagicSquare(int[][] a) {
 		// Your code goes here
+
+		
 		return new int[0][0];
+
 	}
 }
