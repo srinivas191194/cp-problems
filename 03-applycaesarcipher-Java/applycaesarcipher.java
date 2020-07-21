@@ -12,7 +12,40 @@
 class applycaesarcipher {
 	public String fun_applycaesarcipher(String msg, int shift){
 		// your code goes here
-		return "";
+		String str="";
+		for(int i = 0 ; i < msg.length(); i++){
+		  if(msg.charAt(i) != ' '){	
+			int x =(int) msg.charAt(i);
+			if(x >=65 && x <=90){
+				int y = x+shift;
+                if(y >=65 && y<=90){
+					str+= (char) y;
+				}
+				else if(y<65){
+					str+= (char) y+26;
+				}
+				else if(y >90){
+					str += (char) y-26;
+				}
+
+			}else{
+				if(x >= 97 && x <= 122){
+					int y = x +shift;
+					if(y >= 97 && y <= 122){
+						str +=(char) y;
+					}
+					else if(y< 97){
+						str +=(char) y+26;
+					}
+					else if(y > 122){
+						str += (char) y -26;
+					}
+				}
+			}
+			str += msg.charAt(i);
+		}
+	}
+		return str;
 	}
 	
 }
