@@ -8,8 +8,11 @@
 // # Note that "Z" wraps around to "A". So, for example:
 // # assert(applyCaesarCipher("We Attack At Dawn", 1) == "Xf Buubdl Bu Ebxo")
 // # assert(applyCaesarCipher("zodiac", -2) == "xmbgya")
+// # A happy prime is a number that is both happy and prime. 
+// # Write the function nthHappyPrime(n) which takes a non-negative integer 
+// # and returns the nth happy prime number (where the 0th happy prime number is 7).
 
-class applycaesarcipher {
+public class applycaesarcipher {
 	public String fun_applycaesarcipher(String msg, int shift){
 		// your code goes here
 		String str="";
@@ -19,33 +22,36 @@ class applycaesarcipher {
 			if(x >=65 && x <=90){
 				int y = x+shift;
                 if(y >=65 && y<=90){
-					str+= (char) y;
+					str+= (char) (y);
 				}
 				else if(y<65){
-					str+= (char) y+26;
+					str+= (char) (y+26);
 				}
 				else if(y >90){
-					str += (char) y-26;
+					str += (char) (y-26);
 				}
 
 			}else{
 				if(x >= 97 && x <= 122){
 					int y = x +shift;
 					if(y >= 97 && y <= 122){
-						str +=(char) y;
+						str +=(char) (y);
 					}
 					else if(y< 97){
-						str +=(char) y+26;
+						str +=(char) (y+26);
 					}
 					else if(y > 122){
-						str += (char) y -26;
+						str += (char) (y-26);
 					}
 				}
 			}
-			str += msg.charAt(i);
-		}
+        }
+        else
+			  str += msg.charAt(i);
+		
 	}
 		return str;
 	}
+	
 	
 }
