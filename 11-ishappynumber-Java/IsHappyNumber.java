@@ -13,10 +13,34 @@
 // assert(ishappynumber(98) == False)
 // assert(ishappynumber(404) == True)
 // assert(ishappynumber(405) == False)
-
+import java.util.*;
 public class IsHappyNumber {
+	public boolean isCheck(int n){
+		HashSet<Integer> object = new HashSet<Integer>();
+		object.add(n);
+		int result = n;
+		while(result != 1){
+			int temp = result;
+			result =0;
+			while(temp > 0){
+				result += Math.pow(temp%10,2);
+				temp = temp/10;
+			}
+			if(object.contains(result))
+			     return false;
+			
+			object.add(result);
+		 }
+		 return true;
+	}
 	public boolean isHappyNumber(int n) {
 		// your code goes here
+		if(n <= 0)
+		    return false;
+		if(n==1 || n==7)
+			return true;
+		if(isCheck(n))
+		  return true;
 		return false;
 	}
 }
