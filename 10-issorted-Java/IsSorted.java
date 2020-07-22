@@ -8,6 +8,14 @@
 public class IsSorted {
 	public boolean isSorted(double[] list) {
 		// Your code goes here
+
+
+
+
+		
+
+		
+
 		return false;
 	}
 }
