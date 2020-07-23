@@ -11,7 +11,7 @@ public class IsSorted {
 		int s = list.length;
 		if(s == 1 || s == 0)
 		  return true;
-       if(list[0] < list[1]){
+       if(list[0] <= list[1]){
 		   for(int i = 1; i < list.length;i++){
 			   if(list[i] < list[i-1])
 			     return false;
