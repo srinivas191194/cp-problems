@@ -4,10 +4,14 @@
 // returns True if x is a rotation of the digits of y and False otherwise. For example, 
 // 3412 is a rotation of 1234. Any number 
 // is a rotation of itself.
-
+import java.util.*;
 public class IsRotation {
 	public boolean isRotation(int x, int y) {
 		// Your code goes here
-		return false;
+		String number1 = Integer.toString(x);
+		String number2 = Integer.toString(y);
+		number1 += number1;
+		return (number1.contains(number2)) ? true : false ;
+
 	}
 }
