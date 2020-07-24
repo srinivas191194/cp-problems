@@ -10,9 +10,48 @@
 // #  assert(fun_isfactorish(420) == False) # 420 has a 0 (0 is not a factor)
 // #  assert(fun_isfactorish(42) == False) # 42 has a leading 0 (only 2 unique digits)
 
-
-class isfactorish {
+import java.util.*;
+public class isfactorish {
 	public boolean fun_isfactorish(int n){
-		return false;
+	      if(n < 0){
+	          n = -1*n;
+	      }
+		  int backup = n;
+		  if(isCheck(n)){
+			  while(n > 0 || n < 0){
+				  int a = n %10;
+				  if(backup % a != 0)
+					 return false;
+				  n = n/10;	 
+			  }
+			  return true;
+		  }
+		  else {
+			  return false;
+		  }
+		
 	}	
+	public boolean isCheck(int n){
+		// int backup = n;
+		int count = 0;
+		int[] arr = new int[10];
+		while(n > 0 || n < 0){
+			int temp = n%10;
+			if(arr[temp] == 0){
+				arr[temp] = 1;
+			}
+			else 
+			   return false;
+			n = n/10;
+			if(temp != 0){
+			 count= count+1;
+			}
+			if(count > 3)
+			  return false;   
+		}
+		if(count == 3)
+		   return true;
+		else 
+		   return false;
+	}
 }
