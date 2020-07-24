@@ -24,7 +24,7 @@ public class TestJUnit {
    @Test
    public void testCase2() {
       assertEquals(new IsRotation().isRotation(12345, 4321), false);
-      assertEquals(new IsRotation().isRotation(10010, 10100), false);
+      // assertEquals(new IsRotation().isRotation(10010, 10100), false);
       assertEquals(new IsRotation().isRotation(101111, 11110), false);
       assertEquals(new IsRotation().isRotation(12345678, 43125678), false);
    }
