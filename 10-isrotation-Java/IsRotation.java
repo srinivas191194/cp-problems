@@ -10,8 +10,13 @@ public class IsRotation {
 		// Your code goes here
 		String number1 = Integer.toString(x);
 		String number2 = Integer.toString(y);
+		if(number1.length() == number2.length()){
 		number1 += number1;
-		return (number1.contains(number2)) ? true : false ;
+		return (number1.contains(number2)) ? true : false;
+		}
+		else {
+			return false;
+		}
 
 	}
 }
