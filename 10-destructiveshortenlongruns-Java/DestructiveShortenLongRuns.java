@@ -11,10 +11,27 @@
 // L = [2, 3, 5, 5, 5, 3]
 // shortenLongRuns(L, 3)
 // assert(L == [2, 3, 5, 5, 3])
-
+import java.util.*;
 public class DestructiveShortenLongRuns {
 	public int[] destructiveShortenLongRuns(int[] arr, int k) {
 		// Your code goes here
-		return new int[0];
+		ArrayList<Integer> obj = new ArrayList<Integer>();
+		int i;
+		for(i = 0; i < arr.length;i++){
+			int count = 0;
+			for(int j = i; j < arr.length; j++){
+				if(arr[i] == arr[j])
+				  count = count +1;
+				else 
+				   break;
+			}
+			if(count < k)
+			 obj.add(arr[i]);
+		}
+		int[] result = new int[obj.size()];
+		for(int l = 0 ; l < obj.size(); l++)
+			result[l] = obj.get(l);
+		return result;	
+		
 	}
 }
