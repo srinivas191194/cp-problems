@@ -12,10 +12,47 @@
 // [ [ 1, 2],
 //   [ 2, 1]]
 // Each row and each column add to 3, but one diagonal adds to 2 and the other to 4.
-
+import java.util.*;
 public class IsMostlyMagicSquare {
 	public boolean isMostlyMagicSquare(int[][] a) {
 		// Your code goes here
+		int sum=0;
+		for(int i=0; i < 1; i++){
+			for(int j = 0; j < a[0].length; j++)
+			 sum += a[i][j];
+		}
+		if(isCheck(a,sum)){
+			return true;
+		}
 		return false;
+	}
+	public boolean isCheck(int[][] a,int sum){
+		for(int i = 0 ; i < a.length; i++){
+			int result =0;
+			for(int j = 0; j < a.length;j++){
+				result += a[i][j];
+			}
+			if(result != sum)
+			  return false;
+		}
+		for(int i = 0; i < a.length; i++){
+			int result = 0;
+			for(int j = 0 ; j < a.length;j++){
+				result += a[j][i];
+			}
+			if(result != sum)
+			  return false;
+		}
+		int result1 = 0;
+		for(int i = 0,j = 0; i < a.length && j < a.length; i++,j++)
+		   result1 += a[i][j];
+		if(result1 != sum)
+		   return false;
+		int result2 = 0;
+		for(int i= 0,j = a.length-1; i < a.length && j >= 0; i++,j--)
+			result2 += a[i][j];
+		if(result2 != sum)
+		   return false;	
+	return true;         
 	}
 }
