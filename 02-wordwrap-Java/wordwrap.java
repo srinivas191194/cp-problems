@@ -15,8 +15,46 @@
 // # c-de
 // # -fgh""")
 
-class wordwrap {
+public class wordwrap {
 	public String fun_wordwrap(String s, int n){
-		return "";
+		String temp = "";
+		String result = "";
+		int i;
+		for( i = 0 ; i < s.length(); i++){
+			if(s.charAt(i) != ' ')
+			   break;
+		}
+		int j;
+		for(j = s.length()-1; j >=0 ; j--){
+			if(s.charAt(j) != ' ')
+			  break;
+		}
+		System.out.println( i);
+		System.out.println( j);
+		for(int k = i ; k <= j; k++){
+			if(s.charAt(k) == ' ')
+			  temp += '-';
+			else
+			  temp += s.charAt(k);
+		}
+		System.out.println(temp);
+		System.out.println("------------------------------------");
+		int count = 0;
+		for(int m = 0; m < temp.length(); m++){
+			count = count+1;
+			result += temp.charAt(m);
+			if(count == n && m <= temp.length()-(n-1)){
+			   result += '\n';
+			   count = 0;
+			}
+			
+// 			System.out.println(result);
+		}
+		return result;
+	}
+	public static void main(String[] args){
+	    wordwrap obj = new wordwrap();
+	    System.out.println(obj.fun_wordwrap(" a b c de fgh ",4));
+	    System.out.println(obj.fun_wordwrap("  abcdefghij",4));
 	}
 }
