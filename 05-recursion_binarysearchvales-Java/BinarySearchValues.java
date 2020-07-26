@@ -34,10 +34,10 @@ public class BinarySearchValues {
 		      temp +=',';
 		   int mid = (low + high)/2;
 		   if(list[mid] == search){
-			   temp += "(" + mid + ',' + list[mid] +')';
+			   temp += "(" + mid + "," + (char)list[mid] +") ";
 			   return temp;
 		   }
-		   temp += "(" + mid + ',' + list[mid] +")";
+		   temp += "(" + mid + "," +(char) list[mid] +") ";
 		   int searchValue = (int) search;
 		   System.out.println(searchValue);
 		   int midValue = (int) list[mid];
