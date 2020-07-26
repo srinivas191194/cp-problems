@@ -26,7 +26,7 @@ public class recursion_onlyevendigits {
 		if(index >= l.length)
 		   return;
 		int result = 0;
-		int temp = l[index];
+		int temp = l[index];    //43
 		int placeValue = 1;
 // 		while(temp > 0){
 // 			int a = temp % 10;
