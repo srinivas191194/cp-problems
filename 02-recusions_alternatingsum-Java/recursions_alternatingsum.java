@@ -6,6 +6,15 @@
 
 class recursions_alternatingsum {
 	public int fun_recursions_alternatingsum(int[] l){
-		return 0;
+		int result1 = recursion(l,0);
+		int result2 = recursion(l,1);
+		return result1-result2;
+	}
+	public int recursion(int[] l , int a){
+		if(a >= l.length)
+		  return 0;
+        return l[a]+recursion(l,a+2);
+
+		
 	}
 }
