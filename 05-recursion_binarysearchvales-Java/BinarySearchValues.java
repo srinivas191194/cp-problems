@@ -20,6 +20,41 @@
 public class BinarySearchValues {
 	public String binarySearchValues(char[] list, char search) {
 		// Your code goes here
-		return "";
+		String temp="";
+		int high = list.length-1;
+		String result = recursion(list,search,0,high,temp);
+		return '[' + result + ']';
+	}
+	public String recursion(char[] list, char search,int low , int high, String temp ){
+	       System.out.println("low " + low);
+	       System.out.println("high " + high);
+		   if(low > high)
+			 return temp;
+		   if(low != 0 && high != list.length-1)
+		      temp +=',';
+		   int mid = (low + high)/2;
+		   if(list[mid] == search){
+			   temp += "(" + mid + ',' + list[mid] +')';
+			   return temp;
+		   }
+		   temp += "(" + mid + ',' + list[mid] +")";
+		   int searchValue = (int) search;
+		   System.out.println(searchValue);
+		   int midValue = (int) list[mid];
+		   System.out.println(midValue);
+		   if(searchValue < midValue){
+			   high = mid-1;
+		   }
+		   else{
+			   low = mid + 1;
+		   }
+		   return recursion(list,search,low,high,temp);
+
+	}
+	public static void main(String[] args){
+	    BinarySearchValues obj = new BinarySearchValues();
+	    char[] arr1 = {'a','c','f','g','m','q'};
+	    char element = 'f';
+	    System.out.println(obj.binarySearchValues(arr1,element));
 	}
 }
