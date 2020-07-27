@@ -7,7 +7,14 @@
 import java.util.*;
 public class numberofpoolballrows {
 	public int fun_numberofpoolballrows(int balls) {
-		return (balls)*(balls+1)/2;
+		
+		for(int i =1 ; i < balls; i++){
+			int ballscount = (i*(i+1))/2;
+			if(ballscount - balls >= 0){
+				return i;
+			}
 
+		}
+		return 0;
 	}
 }
