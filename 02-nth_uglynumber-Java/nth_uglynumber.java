@@ -3,9 +3,32 @@
 // # 9, 10, 12, 15 shows the few ugly numbers. By convention, nthUglyNumber(0) will give 1.
 
 
-
+import java.util.*;
 class nth_uglynumber {
 	public int fun_nth_uglynumber(int n){
-		return 0;
+	   int count = -1;
+	   int number = 1;
+	   int result = 0;
+	   while(count < n){
+		if(isUgly(number)){
+			result = number;
+			count = count +1;
+		}
+		number = number +1;
+	}
+	return result;
+}
+
+	public boolean isUgly(int number){
+		int a = check(number , 2);
+		a = check(a,3);
+		a = check(a,5);
+		return (a == 1) ? true : false;
+	}
+	public int check(int number , int b){
+		while(number % b == 0){
+			number = number / b;
+		}
+		return number;
 	}
 }
