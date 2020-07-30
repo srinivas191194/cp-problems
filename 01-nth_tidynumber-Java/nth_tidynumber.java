@@ -8,9 +8,32 @@
 
 
 
-
+import java.util.*;
 class nth_tidynumber {
 	public int fun_nth_tidynumber(int n){
-		return 0;
+	int result = 0;
+	int count = -1;
+	int number = 1;
+	while(count < n){
+        if(isTidy(number)){
+			result = number;
+			count = count+1;
+		}
+		number = number +1;
+	}
+	return result;
+	}
+	public boolean isTidy(int number){
+		int prev = number % 10;
+		int temp = number/10;
+		while(temp > 0){
+			int current = temp % 10;
+			if(current > prev){
+               return false;
+			}
+			prev = current;
+			temp = temp/10;
+		}
+		return true;
 	}
 }
