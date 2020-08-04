@@ -7,35 +7,30 @@ public class NthAutomorphicNumbers {
 	public long nthAutomorphicNumbers(int n) {
 		// Your code goes here
 		int count = -1;
-		long result = 0;
-		long number = 0;
+		int number = 1;
+		int result = 0;
 		while(count < n){
-		if(isAutomorphic(number)){
-			count = count+1;
-			result = number;
-		}
-		number = number +1;
+			if(isAutomorphic(number)){
+			  result = number;
+			  count = count+1;
+			}
+			number = number+1;
 		}
 		return result;
-		
 	}
-	public boolean isAutomorphic(long number){
-		Double power = Math.pow(number,2);
-		long temp = number;
-		int result = 0;
-		int place = 1;
-		while(power > 0){
-		   double a = power % 10;
-		   result =(int) a*place+result;
-		   if(result == temp)
-			  return true;
-		   power = power /10;
-		   place = place*10;	  
+	boolean isAutomorphic(int N){
+		int sq = N*N;
+		while(N > 0){
+			if(N% 10 != sq % 10)
+			  return false;
+			N = N/10;
+			sq = sq/10;  
 		}
-		return false;
+		return true;
 	}
-	public static void main(String[] args){
-	    NthAutomorphicNumbers obj = new  NthAutomorphicNumbers();
-	    System.out.println(obj.isAutomorphic(890625));
-	}
+	
+	// public static void main(String[] args){
+	//     NthAutomorphicNumbers obj = new  NthAutomorphicNumbers();
+	//     System.out.println(obj.isAutomorphic(890625));
+	// }
 }
