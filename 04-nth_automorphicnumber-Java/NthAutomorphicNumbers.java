@@ -6,9 +6,9 @@ import java.util.*;
 public class NthAutomorphicNumbers {
 	public long nthAutomorphicNumbers(int n) {
 		// Your code goes here
-		int count = -1;
-		int number = 1;
-		int result = 0;
+		int count = 0;
+		long number = 0;
+		long result = 0;
 		while(count < n){
 			if(isAutomorphic(number)){
 			  result = number;
@@ -18,8 +18,8 @@ public class NthAutomorphicNumbers {
 		}
 		return result;
 	}
-	boolean isAutomorphic(int N){
-		int sq = N*N;
+	boolean isAutomorphic(long N){
+		long sq = N*N;
 		while(N > 0){
 			if(N% 10 != sq % 10)
 			  return false;
@@ -29,8 +29,8 @@ public class NthAutomorphicNumbers {
 		return true;
 	}
 	
-	// public static void main(String[] args){
-	//     NthAutomorphicNumbers obj = new  NthAutomorphicNumbers();
-	//     System.out.println(obj.isAutomorphic(890625));
-	// }
+	 public static void main(String[] args){
+	     NthAutomorphicNumbers obj = new  NthAutomorphicNumbers();
+	     System.out.println(obj.nthAutomorphicNumbers(17));
+	 }
 }
