@@ -11,7 +11,56 @@
 
 
 class nearestkaprekarnumber {
+	public boolean iskarpNumber(long num){
+		if(num == 1)
+		  return true;
+		long square = num*num;
+		long a,b,count = 0;
+		while(square > 0){
+			count += 1;
+			square = square /10;
+		} 
+		square = num*num;
+		for(int i = 1; i < count ; i++){
+			long equalpart = (long) Math.pow(10,i);
+			if(equalpart == num)
+			  return false;
+			a = square%equalpart;
+			b = square/equalpart;
+			if(a+b == num){
+				return true;
+			}  
+		}
+		return false;
+	}
 	public long fun_nearestkaprekarnumber(int n){
-		return 1;
+		long guess1 = (long) n;
+		long guess2 = (long) n;
+		long lower =0,upper = 0;
+		boolean isFound = false;
+		while(guess1 > 0 && !isFound){
+			guess1 -=1;
+			if(iskarpNumber(guess1)){
+				lower = guess1;
+				isFound = true;
+			}
+		}
+		isFound = false;
+		while(!isFound){
+			guess2 += 1;
+			if(iskarpNumber(guess2)){
+				upper = guess2;
+				isFound = true;
+			}
+		}
+		long lowerDiff = n-lower;
+		long upperDiff = upper-n;
+		if(lowerDiff == upperDiff){
+			return lower;
+		}
+		else if(lowerDiff < upperDiff){
+			return lower;
+		}
+		return upper;
 	}
 }
