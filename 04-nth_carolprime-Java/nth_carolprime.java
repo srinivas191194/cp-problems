@@ -11,7 +11,13 @@
 
 
 class nth_carolprime {
-	public int fun_nth_carolprime(int n){
-        return 0;
+	public int carolprime(int num){
+		int carole = (int) Math.pow(2,num)-1;
+		return ((carole*carole)-2);
+	}
+	public long fun_nth_carolprime(int n){
+		n= n+2;
+
+        return carolprime(n);
 	}
 }
