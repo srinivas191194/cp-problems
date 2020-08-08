@@ -9,7 +9,39 @@
 
 
 class nth_kaprekarnumber {
+
+	public boolean isKarNumber(long num){
+		if(num == 1) return true;
+		long square = num*num;
+		long a,b,p=0;
+		while(square > 0){
+			p += 1;
+			square = square/10;
+		}
+		square = num * num;
+		for(int i = 1; i < p ; i++){
+			long equalpart = (long) Math.pow(10,i);
+			if(equalpart == num) 
+			  continue;
+			a = square%equalpart;
+			b = square/equalpart;
+			if(a+b == num){
+				return true;
+			}  
+		}
+		return false;
+	}
 	public long fun_nth_kaprekarnumber(int n){
-		return 1;
+		long index = -1;
+		long guess = 0;
+		long result = 0;
+		while(index < n){
+			if(isKarNumber(guess)){
+				index++;
+				result = guess;
+			}
+			guess +=1;
+		}
+		return result;
 	} 
 }
